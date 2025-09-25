@@ -4,6 +4,8 @@ public class Computer
    private String hersteller;
    private int preis;
    private boolean laptop;
+   private int mhz;
+   
    
    public Computer()
    
@@ -11,13 +13,14 @@ public class Computer
     setHersteller("Lenovo");
     setPreis(899);
     setLaptop(true);
+    setMhz(2000);
     }
     
-    public Computer(String neuHersteller, int neuPreis, boolean neuLaptop)
+    public Computer(String hersteller, int preis, boolean laptop, int mhz)
     {
-    setHersteller(neuHersteller);
-    setPreis(neuPreis);
-    setLaptop(neuLaptop);
+    setHersteller(hersteller);
+    setPreis(preis);
+    setLaptop(laptop);
     }
    
    public String getHersteller()
@@ -37,21 +40,27 @@ public class Computer
         return laptop;
     }
     
-    public void setHersteller(String neuHersteller)
+    public void setHersteller(String hersteller)
     
     {
-        hersteller = neuHersteller;
+        this.hersteller = hersteller;
     }
     
-    public void setPreis(int neuPreis)
+    public void setPreis(int preis)
     {
-        preis = neuPreis;
+        this.preis = preis;
     }
     
-    public void setLaptop(boolean neuLaptop)
+    public void setLaptop(boolean laptop)
     
     {
-        laptop = neuLaptop;
+        this.laptop = laptop;
+    }
+    
+    public void setMhz(int mhz)
+    
+    {
+        this.mhz = mhz;
     }
     
     public void printCpmputer()
