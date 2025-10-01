@@ -3,8 +3,7 @@ public class Customer
 {
    private String name;
    private int geld;
-   private String vorname;
-   private String nachname;
+ 
    
    public Customer(String name, int geld)
     {
@@ -36,29 +35,27 @@ public class Customer
     
     }
     
-   public String getVorname()
-   
-    {
-       return vorname; 
-    
-    }
-    
    public String getNachname()
-   
     {
-    
-        return nachname;
-    
+        int pos = name.indexOf(" ");
+        int length = name.length();
+        return name.substring(pos+1,length);
     }
     
-   public String getNachnameVorname() 
+   public String getVorname()
     {
-        return nachname + " " + vorname;
-        
-        
+        int pos = name.indexOf(" ");
+        return name.substring(0,pos);
+    }
+    
+   public String getNachnameVorname()
+    {
+       int pos = name.indexOf(" ");
+       int length = name.length();
+       return name.substring(pos+1,length)+name.substring(0,pos);
+    
     }
  
-    
    public void setName(String name)
    
     {
@@ -71,22 +68,6 @@ public class Customer
    
     {
         this.geld = geld;
-    
-    }
-    
-   public void setVorname(String vorname)
-   
-   {
-    
-        this.vorname = vorname;
-    
-    }
-    
-   public void setNachname(String nachname)
-   
-   {
-    
-        this.nachname = nachname;
     
     }
     
@@ -106,12 +87,6 @@ public class Customer
              System.out.println(name + " " + geld + " " + "EUR" + " " + "- hat Geld"); 
         
         
-        } 
-       
-
-       
-        
-        
-    
+        }     
     }
 }
