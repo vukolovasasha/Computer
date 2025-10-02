@@ -48,13 +48,12 @@ public class Customer
         return name.substring(0,pos);
     }
     
-   public String getNachnameVorname()
-    {
-       int pos = name.indexOf(" ");
-       int length = name.length();
-       return name.substring(pos+1,length)+name.substring(0,pos);
     
-    }
+  //public String getNachVornave()
+   //{
+      //  getNachname() + " " + getVorname();
+    
+   // } 
  
    public void setName(String name)
    
@@ -64,12 +63,13 @@ public class Customer
     }
     
     
-   public void setGeld(int geld)
+  /* public void setGeld(int geld)
    
     {
         this.geld = geld;
     
     }
+    */
     
    public void printCustomer()
    
@@ -88,5 +88,20 @@ public class Customer
         
         
         }     
+    }
+    
+  public void setGeld(int geld)
+  {
+    if((geld>=0 ) && (geld<= 5000))
+   {
+      this.geld = geld;   
+    }
+    else
+    {
+      System.out.println("Fehler: ungültiges summe. Das summe muss zwischen 1 und 5000 sein!");
+        this.geld = 1000;
+    
+    }
+   
     }
 }
